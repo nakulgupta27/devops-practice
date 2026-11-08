@@ -1,0 +1,458 @@
+ 1420              border: '1px solid rgba(199,168,109,0.15)',
+ 1421              textAlign: 'center',
+ 1422              backgroundImage: 'radial-gradient(ellipse at 50% 0%, rgba(199,168,109,0.05) 0%, transparent 70%)',
+ 1423            }}
+ 1424          >
+ 1425            <div style={{ color: '#C7A86D', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', marginBottom: '12px' }}>READY TO BOOK?</div>
+ 1426            <h2 style={{ color: '#F7F5F2', fontSize: '32px', fontWeight: 900, letterSpacing: '-1px', marginBottom: '12px' }}>Find your perfect stay</h2>
+ 1427            <p style={{ color: '#A6ABB4', fontSize: '15px', marginBottom: '28px' }}>Browse our collection of verified luxury properties and apply your offer at checkout.</p>
+ 1428            <Link href="/properties" style={{
+ 1429              backgroundColor: '#C7A86D', color: '#0E1116',
+ 1430              padding: '14px 32px', borderRadius: '14px',
+ 1431              fontSize: '14px', fontWeight: 800, textDecoration: 'none',
+ 1432              display: 'inline-block',
+ 1433            }}>Browse Stays →</Link>
+ 1434          </motion.div>
+ 1435        </div>
+ 1436      </div>
+ 1437    )
+ 1438  }
+ 1439  EOF
+ 1440  mkdir -p ~/airhotel/guest-web/app/about
+ 1441  cat > ~/airhotel/guest-web/app/about/page.tsx << 'EOF'
+ 1442  'use client'
+ 1443  import Link from 'next/link'
+ 1444  import { motion } from 'framer-motion'
+ 1445  export default function AboutPage() {
+ 1446    return (
+ 1447      <div style={{ backgroundColor: '#0E1116', minHeight: '100vh', paddingTop: '80px' }}>
+ 1448        {/* Hero */}
+ 1449        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 40px 60px' }}>
+ 1450          <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
+ 1451            <div style={{ color: '#C7A86D', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', textTransform: 'uppercase', marginBottom: '16px' }}>Our Story</div>
+ 1452            <h1 style={{ color: '#F7F5F2', fontSize: '60px', fontWeight: 900, letterSpacing: '-3px', lineHeight: 1.05, marginBottom: '24px', maxWidth: '700px' }}>
+ 1453              We built AirHotel because trust matters.
+ 1454            </h1>
+ 1455            <p style={{ color: '#A6ABB4', fontSize: '18px', lineHeight: 1.8, maxWidth: '560px' }}>
+ 1456              We're a hospitality company based in Haryana, India. We manage and verify premium stays so guests can book with complete confidence.
+ 1457            </p>
+ 1458          </motion.div>
+ 1459        </div>
+ 1460        <div style={{ height: '1px', backgroundColor: 'rgba(255,255,255,0.06)' }} />
+ 1461        {/* Mission */}
+ 1462        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 40px' }}>
+ 1463          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '80px', alignItems: 'center' }}>
+ 1464            <motion.div initial={{ opacity: 0, x: -24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+ 1465              <div style={{ color: '#C7A86D', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', marginBottom: '16px' }}>OUR MISSION</div>
+ 1466              <h2 style={{ color: '#F7F5F2', fontSize: '40px', fontWeight: 900, letterSpacing: '-1.5px', lineHeight: 1.1, marginBottom: '20px' }}>Every stay, verified.</h2>
+ 1467              <p style={{ color: '#A6ABB4', fontSize: '15px', lineHeight: 1.8, marginBottom: '16px' }}>
+ 1468                At AirHotel, we believe that luxury and trust should go hand in hand. Every property in our collection is personally inspected and photo-documented by our dedicated caretakers before you arrive.
+ 1469              </p>
+ 1470              <p style={{ color: '#A6ABB4', fontSize: '15px', lineHeight: 1.8 }}>
+ 1471                We started with a simple belief — that guests deserve to know exactly what they're booking. No surprises, no disappointments. Just verified, comfortable, memorable stays.
+ 1472              </p>
+ 1473            </motion.div>
+ 1474            <motion.div initial={{ opacity: 0, x: 24 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
+ 1475              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+ 1476                {[
+ 1477                  { number: '6', label: 'Verified Properties' },
+ 1478                  { number: '100%', label: 'Hygiene Certified' },
+ 1479                  { number: '★ 5.0', label: 'Average Guest Rating' },
+ 1480                  { number: '24/7', label: 'Caretaker Support' },
+ 1481                ].map(stat => (
+ 1482                  <div key={stat.label} style={{
+ 1483                    backgroundColor: '#171B22', borderRadius: '16px', padding: '24px 28px',
+ 1484                    border: '1px solid rgba(255,255,255,0.06)',
+ 1485                    display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+ 1486                  }}>
+ 1487                    <span style={{ color: '#A6ABB4', fontSize: '14px' }}>{stat.label}</span>
+ 1488                    <span style={{ color: '#C7A86D', fontSize: '24px', fontWeight: 900, letterSpacing: '-1px' }}>{stat.number}</span>
+ 1489                  </div>
+ 1490                ))}
+ 1491              </div>
+ 1492            </motion.div>
+ 1493          </div>
+ 1494        </div>
+ 1495        <div style={{ height: '1px', backgroundColor: 'rgba(255,255,255,0.06)' }} />
+ 1496        {/* Values */}
+ 1497        <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '80px 40px' }}>
+ 1498          <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} style={{ marginBottom: '48px' }}>
+ 1499            <div style={{ color: '#C7A86D', fontSize: '11px', fontWeight: 700, letterSpacing: '2px', marginBottom: '12px' }}>WHAT WE STAND FOR</div>
+ 1500            <h2 style={{ color: '#F7F5F2', fontSize: '40px', fontWeight: 900, letterSpacing: '-1.5px' }}>The AirHotel Standard</h2>
+ 1501          </motion.div>
+ 1502          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '20px' }}>
+ 1503            {[
+ 1504              { title: 'Hygiene First', desc: 'Every room is cleaned, inspected, and photographed by our caretakers before your arrival. No exceptions.', icon: '🛡️' },
+ 1505              { title: 'Transparency', desc: 'Real photos, real descriptions, real pricing. What you see is exactly what you get — no hidden fees ever.', icon: '✦' },
+ 1506              { title: 'Personal Care', desc: 'Our caretakers are on-call throughout your stay. We\'re not just a platform — we\'re your hosts.', icon: '🤝' },
+ 1507            ].map((val, i) => (
+ 1508              <motion.div
+ 1509                key={val.title}
+ 1510                initial={{ opacity: 0, y: 24 }}
+ 1511                whileInView={{ opacity: 1, y: 0 }}
+ 1512                viewport={{ once: true }}
+ 1513                transition={{ delay: i * 0.1 }}
+ 1514                style={{
+ 1515                  backgroundColor: '#171B22', borderRadius: '20px', padding: '32px',
+ 1516                  border: '1px solid rgba(255,255,255,0.06)',
+ 1517                }}
+ 1518              >
+ 1519                <div style={{ fontSize: '32px', marginBottom: '16px' }}>{val.icon}</div>
+ 1520                <h3 style={{ color: '#F7F5F2', fontSize: '18px', fontWeight: 800, marginBottom: '10px' }}>{val.title}</h3>
+ 1521                <p style={{ color: '#A6ABB4', fontSize: '13px', lineHeight: 1.7 }}>{val.desc}</p>
+ 1522              </motion.div>
+ 1523            ))}
+ 1524          </div>
+ 1525        </div>
+ 1526        {/* CTA */}
+ 1527        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', padding: '80px 40px' }}>
+ 1528          <div style={{ maxWidth: '600px', margin: '0 auto', textAlign: 'center' }}>
+ 1529            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+ 1530              <h2 style={{ color: '#F7F5F2', fontSize: '40px', fontWeight: 900, letterSpacing: '-1.5px', marginBottom: '16px' }}>Ready to experience AirHotel?</h2>
+ 1531              <p style={{ color: '#A6ABB4', fontSize: '15px', marginBottom: '32px', lineHeight: 1.7 }}>Browse our verified collection and book your perfect stay today.</p>
+ 1532              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center' }}>
+ 1533                <Link href="/properties" style={{ backgroundColor: '#C7A86D', color: '#0E1116', padding: '14px 28px', borderRadius: '14px', fontSize: '14px', fontWeight: 800, textDecoration: 'none' }}>Browse Stays →</Link>
+ 1534                <Link href="/register" style={{ backgroundColor: '#171B22', color: '#F7F5F2', border: '1px solid rgba(255,255,255,0.1)', padding: '14px 28px', borderRadius: '14px', fontSize: '14px', fontWeight: 600, textDecoration: 'none' }}>Create Account</Link>
+ 1535              </div>
+ 1536            </motion.div>
+ 1537          </div>
+ 1538        </div>
+ 1539      </div>
+ 1540    )
+ 1541  }
+ 1542  EOF
+ 1543  cd ~/airhotel/guest-web
+ 1544  npm run dev
+ 1545  cd path/to/airhotel-guest
+ 1546  npm i -g vercel
+ 1547  ls
+ 1548  npx vercel login
+ 1549  npx vercel --prod
+ 1550  df -h
+ 1551  lsblk
+ 1552  ip -a
+ 1553  ls -ld
+ 1554  ls -l
+ 1555  clear
+ 1556  blkid
+ 1557  su - oppo f21 df rakib
+ 1558  df -h
+ 1559  lsblk
+ 1560  clear
+ 1561  lsblk
+ 1562  clear
+ 1563  cd ~/airhotel/caretaker/caretaker2
+ 1564  cd ~/airhotel/caretaker/caretaker2
+ 1565  npx expo start
+ 1566  cd ~/airhotel/caretaker/caretaker2
+ 1567  cat lib/supabase.ts
+ 1568  cd ~/airhotel/caretaker/caretaker2
+ 1569  npx expo start
+ 1570  cd ~/airhotel/caretaker/caretaker2
+ 1571  npx expo start
+ 1572  blkid
+ 1573  cd ~/airhotel/owner
+ 1574  npm run dev -- --port 3001
+ 1575  clear
+ 1576  cd ~/airhotel/guest
+ 1577  npx expo start
+ 1578  cd ~/airhotel/admin
+ 1579  npm run dev
+ 1580  sudo -u postgres createuser --interactive
+ 1581  sudo -u postgres createdb tasktracker
+ 1582  sudo -u postgres psql
+ 1583  sudo -u postgres sql
+ 1584  sudo -u postgres psql
+ 1585  systemctl status postgressql
+ 1586  sudo systemctl status postgressql
+ 1587  sudo systemctl status postgresql
+ 1588  psql -U nakul -d tasktracker -h localhost
+ 1589  sudo -u postgres psql -c "\du"
+ 1590  sudo -u postgres psql -c "\l tasktracker"
+ 1591  clear
+ 1592  sudo apt install fastapi -y
+ 1593  sudo apt install uvicorn -y
+ 1594  sudo apt install sqlalchemy -y
+ 1595  sudo apt install psycopg2-binary -y
+ 1596  sudo apt remove uvicorn python3-uvicorn python3-uvloop python3-wsproto python3-h11 -y
+ 1597  clear
+ 1598  mkdir task-tracker && cd task-tracker
+ 1599  python3 -m venv venv
+ 1600  sudo python3 -m venv venv
+ 1601  cd
+ 1602  apt install python3.12-venv
+ 1603  sudo apt install python3.12-venv
+ 1604  cd task-tracker/
+ 1605  python3 -m venv venv
+ 1606  source venv/bin/activate
+ 1607  pip install fastapi uvicorn sqlalchemy psycopg-binary
+ 1608  which uvicorn
+ 1609  deactivate
+ 1610  cd
+ 1611  which uvicorn
+ 1612  cd task-tracker/
+ 1613  which uvicorn
+ 1614  source venv/bin/activate
+ 1615  which uvicorn
+ 1616  deactivate 
+ 1617  cd
+ 1618  ls -lh ~/Downloads/airbnb-photos.txt
+ 1619  mkdir -p ~/AIRHOTEL_PHOTOS/"The Moon Room"
+ 1620  cd ~/AIRHOTEL_PHOTOS/"The Moon Room"
+ 1621  mkdir -p originals
+ 1622  wget -i ~/Downloads/airbnb-photos.txt      -P originals      --show-progress
+ 1623  ls originals | wc -l
+ 1624  du -sh originals
+ 1625  mkdir -p final
+ 1626  find originals -type f -print0 | while IFS= read -r -d '' file; do     hash=$(sha256sum "$file" | cut -d' ' -f1);      if [ ! -f "final/$hash.jpg" ]; then         cp "$file" "final/$hash.jpg";     fi; done
+ 1627  ls final | wc -l
+ 1628  ls originals | wc -l
+ 1629  du -sh originals
+ 1630  cd
+ 1631  clear
+ 1632  nano ~/download_airbnb_photos.sh
+ 1633  chmod +x ~/download_airbnb_photos.sh
+ 1634  ~/download_airbnb_photos.sh "The Blue Hour"
+ 1635  ~/download_airbnb_photos.sh "The Lakeside Haven Villa"
+ 1636  ~/download_airbnb_photos.sh "Florence Senorita"
+ 1637  ~/download_airbnb_photos.sh "Artistic Lakeside Villa"
+ 1638  ~/download_airbnb_photos.sh "Cocktail Room"
+ 1639  ~/download_airbnb_photos.sh "Minimalist Escape"
+ 1640  clear
+ 1641  cd
+ 1642  clear
+ 1643  cd ~/task-tracker
+ 1644  code .
+ 1645  claude
+ 1646  cd task-tracker/
+ 1647  source venv/bin/activate
+ 1648  deactivate 
+ 1649  cd
+ 1650  curl http://127.0.0.1:8000
+ 1651  lspci | grep -E "VGA|3D|Display"
+ 1652  free -h
+ 1653  lscpu | grep -E "Model name|CPU\(s\)"
+ 1654  glxinfo | grep "OpenGL renderer"
+ 1655  sudo apt install mesa-utils
+ 1656  glxinfo | grep "OpenGL renderer"
+ 1657  nmcli device status
+ 1658  ip addr
+ 1659  ping -c 4 8.8.8.8
+ 1660  clear
+ 1661  env | grep -i proxy
+ 1662  gsettings get org.gnome.system.proxy mode
+ 1663  sudo ufw status verbose
+ 1664  curl -I https://www.redhat.com
+ 1665  curl -4 -I https://www.redhat.com
+ 1666  nslookup www.redhat.com
+ 1667  curl -I https://rha.ole.redhat.com
+ 1668  curl -4 -I --connect-timeout 5 https://rha.ole.redhat.com
+ 1669  curl -6 -I --connect-timeout 5 https://rha.ole.redhat.com
+ 1670  ip -4 route
+ 1671  ping -4 -c 4 192.168.1.1
+ 1672  ping -4 -c 4 1.1.1.1
+ 1673  curl -4 -I --connect-timeout 5 https://www.google.com
+ 1674  nmcli connection show "AirFiber-sgIpI7"
+ 1675  nmcli device show wlp0s20f3
+ 1676  ip -4 neigh
+ 1677  ip route get 1.1.1.1
+ 1678  useradd alex
+ 1679  su - root
+ 1680  sudo su - root
+ 1681  clear
+ 1682  cd ~/airhotel/caretaker/caretaker2
+ 1683  npx expo start
+ 1684  npx expo upgrade
+ 1685  npm install expo@~57.0.0 --legacy-peer-deps
+ 1686  npx expo install --fix
+ 1687  rm -rf node_modules package-lock.json
+ 1688  npm install --legacy-peer-deps
+ 1689  npx expo start
+ 1690  cd ~/airhotel/caretaker/caretaker2
+ 1691  # Step 1 — upgrade expo itself
+ 1692  npm install expo@~57.0.0 --legacy-peer-deps
+ 1693  # Step 2 — fix all peer packages
+ 1694  npx expo install --fix
+ 1695  # Step 3 — clean install
+ 1696  rm -rf node_modules package-lock.json
+ 1697  npm install --legacy-peer-deps
+ 1698  # Step 4 — start
+ 1699  npx expo start
+ 1700  cat > ~/airhotel/caretaker/caretaker2/app/dashboard/camera.tsx << 'ENDOFFILE'
+ 1701  code ~/airhotel/caretaker/caretaker2
+ 1702  npx expo start
+ 1703  npx expo install @expo/vector-icons
+ 1704  R
+ 1705  npx expo start
+ 1706  npx expo install expo-location expo-image-manipulator
+ 1707  npx expo start -c
+ 1708  cd ~/airhotel/caretaker/caretaker2
+ 1709  pwd
+ 1710  npx expo install --check
+ 1711  npx expo start -c
+ 1712  ls ~/airhotel
+ 1713  ls ~/airhotel/admin
+ 1714  cat ~/airhotel/admin/package.json
+ 1715  cat ~/airhotel/caretaker/caretaker2/lib/supabase.ts
+ 1716  curl "https://gagyzggneulzuwvvnmgc.supabase.co/functions/v1/cleanup-photos?dry=1" -H "apikey: sb_publishable_EACdMbpnETdXHaJ_EOQDMg_ZZ3e2bn0" -H "Authorization: Bearer sb_publishable_EACdMbpnETdXHaJ_EOQDMg_ZZ3e2bn0"
+ 1717  cd ~/airhotel/admin
+ 1718  find src -type f | head -80
+ 1719  cat AGENTS.md CLAUDE.md
+ 1720  cd ~/airhotel/admin
+ 1721  cat src/lib/supabase.ts src/app/page.tsx src/app/dashboard/layout.tsx src/app/dashboard/bookings/page.tsx
+ 1722  mkdir -p ~/airhotel/admin/src/app/review
+ 1723  touch ~/airhotel/admin/src/app/review/page.tsx
+ 1724  cd ~/airhotel/admin
+ 1725  npm run dev
+ 1726  cd ~/airhotel/admin
+ 1727  npm run dev
+ 1728  npx vercel --prod
+ 1729  cd
+ 1730  clear
+ 1731  ls
+ 1732  clear
+ 1733  vim first_shell_script.sh
+ 1734  vim second_shell_script.sh
+ 1735  cat first_shell_script.sh
+ 1736  ./first_shell_script.sh
+ 1737  chmod 777 first_shell_script.sh
+ 1738  ./first_shell_script.sh
+ 1739  vim sample.sh
+ 1740  chmod 777 sample.sh
+ 1741  ./sample.sh 
+ 1742  ls -l
+ 1743  ls
+ 1744  vim sample.sh
+ 1745  top
+ 1746  clear
+ 1747  ls -l
+ 1748  clear
+ 1749  vim nodehealth.sh
+ 1750  chmod 777 nodehealth.sh
+ 1751  ./nodehealth.sh
+ 1752  vim nodehealth.sh
+ 1753  ./nodehealth.sh
+ 1754  vim nodehealth.sh
+ 1755  clear
+ 1756  ps -ef
+ 1757  ps -ef | grep "amazon"
+ 1758  vim nodehealth.sh 
+ 1759  clear
+ 1760  --load
+ 1761  systemctl daemon-reload
+ 1762  clear
+ 1763  ps -ef | grep amazon
+ 1764  ps -ef | grep amazon | awk -F " " '{orint $2}'
+ 1765  vim nodehealth.sh 
+ 1766  ./ nodehealth.sh 
+ 1767  ./nodehealth.sh 
+ 1768  vim nodehealth.sh 
+ 1769  clear
+ 1770  cat logfile | grep error
+ 1771  curl -X GET api.foo.com
+ 1772  clear
+ 1773  vim shell.sh
+ 1774  clear
+ 1775  curl google.com
+ 1776  curl google.com | grep HREF
+ 1777  clear
+ 1778  vim samplescript.sh
+ 1779  chmod 777 samplescript.sh
+ 1780  ./samplescript.sh 
+ 1781  vim samplescript.sh
+ 1782  ./samplescript.sh 
+ 1783  chmod 777 samplescript.sh
+ 1784  ./samplescript.sh 
+ 1785  vim samplescript.sh
+ 1786  ./samplescript.sh 
+ 1787  vim samplescript.sh
+ 1788  chmod 777 samplescript.sh
+ 1789  ./samplescript.sh 
+ 1790  vim samplescript.sh
+ 1791  clear
+ 1792  vim number.sh
+ 1793  chmod 777 number.sh
+ 1794  ./number.sh 
+ 1795  clear
+ 1796  bash
+ 1797  aws
+ 1798  sudo apt install awscli
+ 1799  clear
+ 1800  vim aws_resource_tracker.sh
+ 1801  chmod 777 aws_resource_tracker.sh
+ 1802  ./aws_resource_tracker.sh 
+ 1803  vim aws_resource_tracker.sh
+ 1804  clear
+ 1805  vim aws_resource_tracker.sh
+ 1806  vim samplescript.sh
+ 1807  chmod +x manuf3-console
+ 1808  ./manuf3-console
+ 1809  cd ~/Downloads
+ 1810  ls manuf3-console
+ 1811  chmod +x manuf3-console
+ 1812  ./manuf3-console
+ 1813  ./manuf3-console 
+ 1814  npx expo start
+ 1815  npx expo install expo@^58.0.0 --fix
+ 1816  npx expo install --fix
+ 1817  npx expo-doctor
+ 1818  npx expo start -c
+ 1819  cd /home/nakul/airhotel/caretaker/caretaker2
+ 1820  npx expo install expo@^58.0.0
+ 1821  npx expo install --fix
+ 1822  rm -rf node_modules package-lock.json
+ 1823  npm install
+ 1824  npx expo-doctor
+ 1825  npx expo start -c
+ 1826  npm run dev
+ 1827  git init
+ 1828  ls -la
+ 1829  clear
+ 1830  git init
+ 1831  ls
+ 1832  ls -la
+ 1833  ls .git
+ 1834  git status
+ 1835  git add calculator.sh
+ 1836  git status
+ 1837  clear
+ 1838  git --version
+ 1839  ls -la
+ 1840  pwd
+ 1841  cd /home/nakul/desktop
+ 1842  cd /downloads/nakul
+ 1843  cd
+ 1844  exit
+ 1845  pwd
+ 1846  cd /downloads/nakul
+ 1847  cd ~/downloads
+ 1848  cd /home/nakul/downloads
+ 1849  cd /home/nakul/Downloads
+ 1850  mkdir github-for-devops
+ 1851  cd
+ 1852  python testing.py 
+ 1853  python3 testing.py 
+ 1854  python testing.py 
+ 1855  python3 testing.py 
+ 1856  rm testing.py 
+ 1857  git init
+ 1858  ls -a
+ 1859  git status
+ 1860  clear
+ 1861  git status
+ 1862  git add testing.py 
+ 1863  git status
+ 1864  git add.
+ 1865  git add .
+ 1866  git status
+ 1867  git commit -m "added testing files"
+ 1868  git status
+ 1869  clear
+ 1870  rm testing.py
+ 1871  ls
+ 1872  git restore testing.py 
+ 1873  ls
+ 1874  clear
+ 1875  git init
+ 1876  history
+nakul@elitebook:~/
