@@ -431,7 +431,7 @@
  1850  mkdir github-for-devops
  1851  cd
  1852  python testing.py 
- 1853  python3 testing.py 
+ 1853  python3 testing.py e
  1854  python testing.py 
  1855  python3 testing.py 
  1856  rm testing.py 
